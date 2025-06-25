@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastro Realizado com Sucesso</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f5fff5;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .success {
+      color: green;
+      font-size: 1.5em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="success">✅ Cadastro realizado com sucesso!</h1>
+    <p><strong>Nome:</strong> <span id="nome"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+
+    <p>Você agora está na lista de espera da <strong>Imersão Mestre do HTML</strong>! 🧠</p>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      document.getElementById("nome").textContent = params.get("nome") || "Não informado";
+      document.getElementById("email").textContent = params.get("email") || "Não informado";
+    </script>
+  </div>
+</body>
+
+</html>

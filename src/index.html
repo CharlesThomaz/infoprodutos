@@ -14,30 +14,17 @@
         <p>Você acaba de desbloquear o acesso à <span class="highlight">SUPER AULA</span> e também à <span
                 class="highlight">lista de espera</span> da <strong>Imersão Mestre do HTML</strong>!</p>
 
-        <p>Essa aula foi feita com carinho para quem quer sair do zero no HTML e criar páginas incríveis com estrutura
-            profissional.</p>
-
-        <h2>🎥 Assista agora a Super Aula:</h2>
-
-        <div class="video-frame">
-            <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID" title="Super Aula - Imersão HTML"
-                allowfullscreen></iframe>
-        </div>
-
         <h2>✅ Cadastre-se na lista de espera:</h2>
 
-        <form action="https://primary-production-91cf.up.railway.app/webhook/imersao" method="POST">
+        <form id="cadastroForm">
             <label for="nome">Nome completo:</label>
             <input type="text" name="nome" id="nome" required placeholder="Ex: Ana Souza" />
 
             <label for="email">E-mail:</label>
-            <input type="email" name="email" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                placeholder="Ex: seuemail@email.com" />
+            <input type="email" name="email" id="email" required placeholder="Ex: seuemail@email.com" />
 
             <input type="tel" name="telefone" id="telefone" required placeholder="Ex: (11) 91234-5678"
                 oninput="this.value = this.value.replace(/[^0-9()\s-]/g, '')" />
-
-
 
             <label for="interesse">O que mais te interessa?</label>
             <select name="interesse" id="interesse" required>
@@ -54,9 +41,8 @@
             <button type="submit">Quero entrar na lista de espera</button>
         </form>
 
-        <div class="footer">
-            <p>&copy; 2025 - Mestre do HTML | Todos os direitos reservados</p>
-        </div>
+        <script src="js/index.js"></script>
+        </script>
     </div>
 </body>
 
