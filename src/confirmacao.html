@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Confirmação de cadastro na lista de espera da Imersão Mestre do HTML">
   <title>Cadastro Realizado com Sucesso</title>
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,6 +19,12 @@
             </div>
             
             <div class="cyber-content">
+                <!-- Adicionando os checkboxes da imagem -->
+                <div class="cyber-checklist">
+                    <div><input type="checkbox" id="nemexilio" disabled> <label for="nemexilio">Nemexílio informado</label></div>
+                    <div><input type="checkbox" id="emultielo" checked disabled> <label for="emultielo">Emultiélo informado</label></div>
+                </div>
+
                 <div class="cyber-user-info">
                     <div>
                         <i class="fas fa-user"></i>
@@ -37,8 +44,12 @@
                 </div>
 
                 <div class="cyber-video-frame">
-                    <iframe src="https://youtu.be/jyduSISnXLk"
-                        title="Super Aula - Imersão Mestre do HTML" allowfullscreen></iframe>
+                    <!-- Corrigindo o iframe do YouTube -->
+                    <iframe src="https://www.youtube.com/embed/aJF9E2mxa5o" 
+                            title="Super Aula - Imersão Mestre do HTML" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
                 </div>
                 
                 <div class="cyber-share">
@@ -70,6 +81,14 @@
         const params = new URLSearchParams(window.location.search);
         document.getElementById("nome").textContent = params.get("nome") || "Não informado";
         document.getElementById("email").textContent = params.get("email") || "Não informado";
+        
+        // Marca os checkboxes baseado nos parâmetros da URL (opcional)
+        if(params.get("nemexilio")) {
+            document.getElementById("nemexilio").checked = true;
+        }
+        if(params.get("emultielo")) {
+            document.getElementById("emultielo").checked = true;
+        }
     </script>
 </body>
 
