@@ -11,85 +11,80 @@
 </head>
 
 <body>
-    <div class="cyber-container">
-        <div class="cyber-card">
-            <div class="cyber-header">
-                <div class="cyber-glitch success" data-text="✅ CADASTRO CONCLUÍDO!">✅ CADASTRO CONCLUÍDO!</div>
-                <div class="cyber-line"></div>
-            </div>
-            
-            <div class="cyber-content">
-                <!-- Adicionando os checkboxes da imagem -->
-                <div class="cyber-checklist">
-                    <div><input type="checkbox" id="nemexilio" disabled> <label for="nemexilio">Nemexílio informado</label></div>
-                    <div><input type="checkbox" id="emultielo" checked disabled> <label for="emultielo">Emultiélo informado</label></div>
-                </div>
+  <div class="cyber-container">
+    <div class="cyber-card">
+      <div class="cyber-header">
+        <div class="cyber-glitch success" data-text="✅ CADASTRO CONCLUÍDO!">✅ CADASTRO CONCLUÍDO!</div>
+        <div class="cyber-line"></div>
+      </div>
 
-                <div class="cyber-user-info">
-                    <div>
-                        <i class="fas fa-user"></i>
-                        <strong>Nome:</strong> <span id="nome"></span>
-                    </div>
-                    <div>
-                        <i class="fas fa-envelope"></i>
-                        <strong>Email:</strong> <span id="email"></span>
-                    </div>
-                </div>
-
-                <p class="cyber-success-message">Você agora faz parte da <span class="cyber-highlight">lista de espera</span> da <strong>Imersão Mestre do HTML</strong>!</p>
-
-                <div class="cyber-subheader">
-                    <i class="fas fa-play-circle cyber-icon"></i>
-                    <span>ASSISTA AGORA À SUPER AULA</span>
-                </div>
-
-                <div class="cyber-video-frame">
-                    <!-- Corrigindo o iframe do YouTube -->
-                    <iframe src="https://www.youtube.com/embed/aJF9E2mxa5o" 
-                            title="Super Aula - Imersão Mestre do HTML" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
-                </div>
-                
-                <div class="cyber-share">
-                    <p>Compartilhe com amigos:</p>
-                    <div class="cyber-social">
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="cyber-footer">
-                <div class="cyber-social">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-discord"></i></a>
-                </div>
-                <p>© 2023 Imersão Mestre do HTML | Todos os direitos reservados</p>
-            </div>
+      <div class="cyber-content">
+        <div class="cyber-user-info">
+          <div>
+            <i class="fas fa-user"></i>
+            <strong>Nome:</strong> <span id="nome"></span>
+          </div>
+          <div>
+            <i class="fas fa-envelope"></i>
+            <strong>Email:</strong> <span id="email"></span>
+          </div>
         </div>
-        
-        <div class="cyber-grid"></div>
-        <div class="cyber-particles"></div>
+
+        <p class="cyber-success-message">
+          Você agora faz parte da <span class="cyber-highlight">lista de espera</span> da <strong>Imersão Mestre do HTML</strong>!
+        </p>
+
+        <div class="cyber-highlight-box">
+          <p><i class="fas fa-paper-plane"></i> Um e-mail foi enviado para <strong><span id="email-confirmacao"></span></strong> com o link exclusivo para o <strong>grupo fechado no Telegram</strong>. Confira sua caixa de entrada e participe agora!</p>
+        </div>
+
+        <div class="cyber-subheader">
+          <i class="fas fa-play-circle cyber-icon"></i>
+          <span>ASSISTA AGORA À SUPER AULA</span>
+        </div>
+
+        <div class="cyber-video-frame">
+          <iframe src="https://www.youtube.com/embed/aJF9E2mxa5o" 
+                  title="Super Aula - Imersão Mestre do HTML" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen></iframe>
+        </div>
+
+        <div class="cyber-share">
+          <p>Compartilhe com amigos:</p>
+          <div class="cyber-social">
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cyber-footer">
+        <div class="cyber-social">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-discord"></i></a>
+        </div>
+        <p>© 2023 Imersão Mestre do HTML | Todos os direitos reservados</p>
+      </div>
     </div>
 
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        document.getElementById("nome").textContent = params.get("nome") || "Não informado";
-        document.getElementById("email").textContent = params.get("email") || "Não informado";
-        
-        // Marca os checkboxes baseado nos parâmetros da URL (opcional)
-        if(params.get("nemexilio")) {
-            document.getElementById("nemexilio").checked = true;
-        }
-        if(params.get("emultielo")) {
-            document.getElementById("emultielo").checked = true;
-        }
-    </script>
+    <div class="cyber-grid"></div>
+    <div class="cyber-particles"></div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const nome = params.get("nome") || "Não informado";
+    const email = params.get("email") || "Não informado";
+
+    document.getElementById("nome").textContent = nome;
+    document.getElementById("email").textContent = email;
+    document.getElementById("email-confirmacao").textContent = email;
+  </script>
 </body>
 
 </html>
